@@ -1,0 +1,20 @@
+  <mat-card>
+    <mat-card-content>    
+      <mat-icon matPrefix>search</mat-icon>&nbsp;&nbsp;
+
+      <mat-form-field class='query-input'>
+        <input matInput type="text" placeholder="Search for" [(ngModel)]="query" (keypress)="onKey($event)">
+        <button mat-button *ngIf="query" matSuffix mat-icon-button aria-label="Clear" (click)="query=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-menu #menu="matMenu" [overlapTrigger]='true'>
+        <button mat-menu-item *ngFor="let scope of searchScopes" (click)='setSearchScope(scope)'>{{ scope }}</button>
+      </mat-menu>
+
+      <button mat-button [matMenuTriggerFor]="menu" class="scope-button">in {{selectedScope}}</button>
+      <button [disabled]='!query' class="find-button" mat-raised-button color="primary" (click)="searchNow()">Find</button>
+
+    </mat-card-content>
+  </mat-card>

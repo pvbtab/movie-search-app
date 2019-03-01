@@ -1,0 +1,25 @@
+<ng-container *ngIf="results.length > 0">
+  <mat-card class="movie-card" *ngFor="let movie of results">
+    <mat-card-header>
+      <div mat-card-avatar></div>
+      <mat-card-title>{{ movie.Title }}</mat-card-title>
+      <mat-card-subtitle>{{ movie.Year }}</mat-card-subtitle>
+    </mat-card-header>
+    <img *ngIf="movie.Poster != 'N/A'" mat-card-image src="{{ movie.Poster }}">
+    <mat-card-content>
+      <p>
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>READ MORE</button>
+    </mat-card-actions>    
+  </mat-card>
+</ng-container>
+
+<ng-container *ngIf="results.length == 0">
+  <mat-card class="movie-card">
+    <mat-card-header>
+      <mat-card-title>No matching movies found</mat-card-title>
+    </mat-card-header>
+  </mat-card>
+</ng-container>

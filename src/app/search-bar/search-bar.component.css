@@ -1,0 +1,16 @@
+mat-card {
+    width: 600px;
+    margin: 25px auto;
+}
+
+.query-input {
+    width: 300px;
+}
+
+input {
+    width: 100%;
+}
+
+.find-button, .scope-button {
+    margin-left: 20px;
+}
